@@ -35,6 +35,20 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
+ExecStart=/usr/local/bin/db1000n
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat << EOF > /etc/systemd/system/dbcustom.service
+[Unit]
+Description=DBcustom
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
 ExecStart=/usr/local/bin/db1000n -c https://raw.githubusercontent.com/SeyOr/db-config/main/output.yaml
 [Install]
 WantedBy=multi-user.target
@@ -43,4 +57,6 @@ EOF
 systemctl daemon-reload
 systemctl start db.service
 systemctl enable db.service
+systemctl start dbcustom.service
+systemctl enable dbcustom.service
 echo "Install db1000n complete!"
