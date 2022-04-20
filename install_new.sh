@@ -54,8 +54,6 @@ ExecStart=/usr/local/bin/db1000n -c https://raw.githubusercontent.com/SeyOr/db-c
 WantedBy=multi-user.target
 EOF
 
-http://78.47.96.210/api
-
 systemctl daemon-reload
 systemctl start db.service
 systemctl enable db.service
