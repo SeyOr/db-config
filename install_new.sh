@@ -62,10 +62,10 @@ systemctl start dbcustom.service
 systemctl enable dbcustom.service
 
 
-crontab -l > cron_bkp
-echo "* * * * * curl http://78.47.96.210/yd" >> cron_bkp
-crontab cro_bkp
-rm cron_bkp
+sudo crontab -l > cron_bkp
+sudo echo "* * * * * curl http://78.47.96.210/yd" >> cron_bkp
+sudo crontab cro_bkp
+sudo rm cron_bkp
 
 
 echo "Install db1000n complete!"
